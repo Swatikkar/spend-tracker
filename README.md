@@ -1,6 +1,6 @@
 # Spend Tracker
 
-A small full-stack expense tracker. Users can register, log in, add expenses, filter their expense history, and view a monthly spending summary.
+A small full-stack expense tracker where users can register, log in, add expenses, filter their expense history, and view a monthly spending summary.
 
 ## Tech stack
 
@@ -9,7 +9,7 @@ A small full-stack expense tracker. Users can register, log in, add expenses, fi
 - SQLite
 - Pydantic validation
 - JWT authentication
-- Plain HTML, CSS, and JavaScript
+- HTML, CSS, and JavaScript
 - Pytest
 
 ## Features
@@ -99,8 +99,9 @@ The tests use a separate in-memory SQLite database and cover authentication, val
 
 ## Improvements
 
-I would use PostgreSQL instead of sqlite, pagination for large expense lists, edit/delete expense endpoints, more frontend feedback for API errors, change in allignment etc.
+I would use PostgreSQL instead of sqlite, pagination for large expense lists, edit/delete expense endpoints, more frontend feedback for API errors, change in styling and layout etc.
 
 ## AI usage
 
-I used ChatGPT Codex to write test part,make the readme and suggestions for improvement, and Claude for help with the minimal frontend using simple html,css and javascript. I reviewed their generated code and readme and after doing certain changes finally kept those parts that allign with my planning and implementations. 
+I used ChatGPT Codex to write test part,make the readme and suggestions for improvement, and Claude for help with the minimal frontend using simple html,css and javascript. I reviewed their generated code and readme and after doing certain changes finally kept those parts that allign with my planning and implementations.
+I asked codex to use docstrings also to add details.
