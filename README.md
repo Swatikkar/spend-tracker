@@ -1,6 +1,6 @@
 # Spend Tracker
 
-A small full-stack expense tracker built for the Infinity Consultant coding task. Users can register, log in, add expenses, filter their expense history, and view a monthly spending summary.
+A small full-stack expense tracker where users can register, log in, add expenses, filter their expense history, and view a monthly spending summary.
 
 ## Tech stack
 
@@ -9,7 +9,7 @@ A small full-stack expense tracker built for the Infinity Consultant coding task
 - SQLite
 - Pydantic validation
 - JWT authentication
-- Plain HTML, CSS, and JavaScript
+- HTML, CSS, and JavaScript
 - Pytest
 
 ## Features
@@ -97,10 +97,11 @@ The tests use a separate in-memory SQLite database and cover authentication, val
 - Month ranges use an inclusive start and exclusive next-month boundary, which also handles different month lengths.
 - SQLite keeps setup simple while still satisfying the requirement for a real database.
 
-## With more time
+## Improvements
 
-I would add database migrations, pagination for large expense lists, edit/delete expense endpoints, and more frontend feedback for API errors.
+I would use PostgreSQL instead of sqlite, pagination for large expense lists, edit/delete expense endpoints, more frontend feedback for API errors, change in styling and layout etc.
 
 ## AI usage
 
-I used ChatGPT for backend review and test-case suggestions, and Claude for help with the minimal frontend. I reviewed and adapted the generated code to the project requirements and kept only the parts I could explain.
+I used ChatGPT Codex to write test part,make the readme and suggestions for improvement, and Claude for help with the minimal frontend using simple html,css and javascript. I reviewed their generated code and readme and after doing certain changes finally kept those parts that allign with my planning and implementations.
+I asked codex to use docstrings also to add details.
