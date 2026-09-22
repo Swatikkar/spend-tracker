@@ -1,7 +1,6 @@
 const API_BASE = "http://127.0.0.1:8000";
 let token = localStorage.getItem("token");
 
-// ==================== AUTH UI TOGGLE ====================
 
 document.getElementById("toggleRegister").addEventListener("click", (e) => {
     e.preventDefault();
@@ -14,8 +13,6 @@ document.getElementById("toggleLogin").addEventListener("click", (e) => {
     document.getElementById("registerForm").style.display = "none";
     document.getElementById("loginForm").style.display = "block";
 });
-
-// ==================== AUTH FUNCTIONS ====================
 
 function showAuthMessage(message, isError = false) {
     const msgEl = document.getElementById("authMessage");
@@ -89,14 +86,12 @@ function logout() {
     showAuthSection(true);
 }
 
-// ==================== UI STATE ====================
 
 function showAuthSection(show) {
     document.getElementById("authSection").style.display = show ? "block" : "none";
     document.getElementById("appSection").style.display = show ? "none" : "block";
 }
 
-// ==================== API CALLS ====================
 
 async function apiCall(endpoint, method = "GET", body = null) {
     const options = {
@@ -248,7 +243,6 @@ async function loadSummary(month = null) {
     }
 }
 
-// ==================== EVENT LISTENERS ====================
 
 document.getElementById("loginForm").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -289,7 +283,6 @@ document.getElementById("clearFilterBtn").addEventListener("click", () => {
 
 document.getElementById("logoutBtn").addEventListener("click", logout);
 
-// ==================== INITIALIZATION ====================
 
 if (token) {
     showAuthSection(false);

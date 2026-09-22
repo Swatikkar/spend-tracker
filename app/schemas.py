@@ -1,9 +1,8 @@
-from pydantic import BaseModel, Field, field_validator, EmailStr
+from pydantic import BaseModel, ConfigDict, Field, field_validator, EmailStr
 from decimal import Decimal
 from datetime import date, datetime
 from typing import Optional, Dict, List
 
-# ==================== USER SCHEMAS ====================
 
 class UserRegister(BaseModel):
     email: EmailStr
@@ -16,20 +15,17 @@ class UserLogin(BaseModel):
 
 
 class UserResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     email: str
     created_at: datetime
-
-    class Config:
-        from_attributes = True
 
 
 class Token(BaseModel):
     access_token: str
     token_type: str
 
-
-# ==================== EXPENSE SCHEMAS ====================
 
 class ExpenseCreate(BaseModel):
     amount: Decimal = Field(..., gt=0, max_digits=12, decimal_places=2)
@@ -51,12 +47,11 @@ class ExpenseCreate(BaseModel):
 
 
 class ExpenseResponse(ExpenseCreate):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     created_at: datetime
     user_id: int
-
-    class Config:
-        from_attributes = True
 
 
 class SummaryResponse(BaseModel):

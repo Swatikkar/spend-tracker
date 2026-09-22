@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- AUTH SECTION -->
+    <div class="container">      
       <section id="authSection" class="auth-section">
         <h1>Spend Tracker</h1>
         <div id="authForm">
@@ -54,15 +53,11 @@
           <div id="authMessage" class="message"></div>
         </div>
       </section>
-
-      <!-- APP SECTION (hidden until logged in) -->
       <section id="appSection" style="display: none">
         <div class="header">
           <h1>Spend Tracker</h1>
           <button id="logoutBtn">Logout</button>
         </div>
-
-        <!-- Section 1: Add Expense Form -->
         <section class="form-section">
           <h2>Add Expense</h2>
           <form id="expenseForm">
@@ -86,16 +81,12 @@
           </form>
           <div id="formMessage" class="message"></div>
         </section>
-
-        <!-- Section 2: Summary -->
         <section class="summary-section">
           <h2>Summary</h2>
           <div id="summaryContainer">
             <p>Loading summary...</p>
           </div>
         </section>
-
-        <!-- Section 3: Expense List with Filters -->
         <section class="list-section">
           <h2>Expenses</h2>
           <div class="filters">

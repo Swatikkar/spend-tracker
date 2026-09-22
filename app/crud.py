@@ -7,8 +7,6 @@ from app.models import Expense, User
 from app.schemas import ExpenseCreate
 from app.auth import hash_password
 
-# ==================== USER OPERATIONS ====================
-
 def create_user(db: Session, email: str, password: str) -> User:
     """Create a new user"""
     db_user = User(
@@ -28,7 +26,6 @@ def get_user_by_id(db: Session, user_id: int) -> Optional[User]:
     """Get user by ID"""
     return db.query(User).filter(User.id == user_id).first()
 
-# ==================== EXPENSE OPERATIONS ====================
 
 def create_expense(db: Session, expense: ExpenseCreate, user_id: int) -> Expense:
     """Create a new expense for a user"""

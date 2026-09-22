@@ -11,7 +11,6 @@ class User(Base):
     hashed_password = Column(String(255), nullable=False)
     created_at = Column(DateTime, nullable=False, server_default=func.now())
     
-    # Relationship to expenses
     expenses = relationship("Expense", back_populates="owner")
 
 
@@ -25,8 +24,6 @@ class Expense(Base):
     date = Column(Date, nullable=False, index=True)
     created_at = Column(DateTime, nullable=False, server_default=func.now())
     
-    # Foreign key to User
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False, index=True)
     
-    # Relationship to user
     owner = relationship("User", back_populates="expenses")

@@ -4,6 +4,7 @@ from decimal import Decimal
 from typing import Optional, Tuple, Dict
 from app.crud import get_expenses_by_month
 
+
 def validate_month_format(month: str) -> bool:
     """Validate YYYY-MM format"""
     if not month or len(month) != 7:

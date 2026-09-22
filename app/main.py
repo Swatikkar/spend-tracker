@@ -19,12 +19,9 @@ from app.auth import (
     get_current_user, create_access_token, verify_password
 )
 
-# Create tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Spend Tracker API")
-
-# ==================== AUTH ENDPOINTS ====================
 
 @app.post("/auth/register", response_model=UserResponse, status_code=201)
 def register(user_data: UserRegister, db: Session = Depends(get_db)):
@@ -58,8 +55,6 @@ def login(user_data: UserLogin, db: Session = Depends(get_db)):
     }
 
 
-# ==================== EXPENSE ENDPOINTS ====================
-
 @app.post("/expenses", response_model=ExpenseResponse, status_code=201)
 def add_expense(
     expense: ExpenseCreate,
@@ -88,7 +83,6 @@ def list_expenses(
     - end_date: Filter until this date (inclusive)
     """
     
-    # Validate date range
     if start_date and end_date and start_date > end_date:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -124,8 +118,6 @@ def get_summary(
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
 
-
-# ==================== STATIC FILES ====================
 
 static_dir = Path(__file__).parent / "static"
 app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
